@@ -13,7 +13,7 @@
         tools:context=".ui.curious.CuriousSearchView">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/search_inputLayout"
+            android:id="@+id/searchView_inputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -24,12 +24,20 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/"
+                android:id="@+id/searchView_inputTxt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text = "Search!"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchView_inputLayout"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
