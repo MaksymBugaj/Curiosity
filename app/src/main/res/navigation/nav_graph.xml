@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/addCuriousNoteView">
+
+    <fragment
+        android:id="@+id/curiousSearchView"
+        android:name="pl.c.curiosity.ui.search.CuriousSearchView"
+        android:label="CuriousSearchView" />
+    <fragment
+        android:id="@+id/addCuriousNoteView"
+        android:name="pl.c.curiosity.ui.curious.add.AddCuriousNoteView"
+        android:label="AddCuriousNoteView" >
+        <action
+            android:id="@+id/action_addCuriousNoteView_to_curiousNotesView"
+            app:destination="@id/curiousNotesView"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/curiousNotesView"
+        android:name="pl.c.curiosity.ui.curious.list.CuriousNotesView"
+        android:label="curious_notes_view"
+        tools:layout="@layout/curious_notes_view" >
+
+    </fragment>
+
 
 </navigation>

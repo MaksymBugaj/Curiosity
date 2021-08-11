@@ -1,4 +1,4 @@
-package pl.c.curiosity.ui.curious
+package pl.c.curiosity.ui.search
 
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject

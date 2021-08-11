@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Curiosity" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Curiosity" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -13,4 +13,65 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="TextViewsBig">
+        <item name="android:textSize">@dimen/textSizeBig</item>
+        <item name="android:layout_marginStart">@dimen/marginStartNormal</item>
+        <item name="android:layout_marginEnd">@dimen/marginEndNormal</item>
+        <item name="android:layout_marginTop">@dimen/marginTopNormal</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextViewsNormal">
+        <item name="android:textSize">@dimen/textSizeBig</item>
+        <item name="android:layout_marginStart">@dimen/marginStartNormal</item>
+        <item name="android:layout_marginEnd">@dimen/marginEndNormal</item>
+        <item name="android:layout_marginTop">@dimen/marginTopNormal</item>
+        <item name="android:textColor">@color/schakalaka</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextViewsSmallBold">
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+        <item name="android:layout_marginStart">@dimen/marginStartNormal</item>
+        <item name="android:layout_marginEnd">@dimen/marginEndNormal</item>
+        <item name="android:layout_marginTop">@dimen/marginTopNormal</item>
+        <item name="android:layout_marginBottom">@dimen/marginBottomNormal</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextLayoutNormal">
+        <item name="android:layout_marginStart">@dimen/marginStartNormal</item>
+        <item name="android:layout_marginEnd">@dimen/marginEndNormal</item>
+        <item name="android:layout_marginTop">@dimen/marginTopNormal</item>
+        <item name="endIconMode">clear_text</item>
+    </style>
+
+    <style name="MaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_marginStart">@dimen/marginStartNormal</item>
+        <item name="android:layout_marginEnd">@dimen/marginEndNormal</item>
+        <item name="android:layout_marginTop">@dimen/marginTopNormal</item>
+        <item name="android:layout_marginBottom">@dimen/marginBottomNormal</item>
+        <item name="backgroundTint">@color/DarkCyan</item>
+        <item name="strokeColor">@color/Aqua</item>
+        <!--        <item name="strokeWidth">@dimen/strokeWidth</item>-->
+    </style>
+
+
+    <style name="BottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">@drawable/corner_circle</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent = "@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:typeface">monospace</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
 </resources>

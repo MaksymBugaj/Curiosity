@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/addCuriousNoteView"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_add_24"
+        android:title="@string/add" />
+
+    <item
+        android:id="@+id/curiousNotesView"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_list_24"
+        android:title="@string/currentNotes" />
+
+    <item
+        android:id="@+id/statistics"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_leaderboard_24"
+        android:title="@string/statistics" />
 </menu>

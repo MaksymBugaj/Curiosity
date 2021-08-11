@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Curiosity</string>
     <string name="search">Type interesting thing</string>
+    <string name="add">Add new note</string>
+    <string name="currentNotes">Current notes</string>
+    <string name="statistics">Stats</string>
+    <string name="new_note_view_note_title_hint">Insert Title (optionally)</string>
+    <string name="new_note_view_note_text_hint">Insert note</string>
+    <string name="new_note_view_note_url_hint">Insert url (optionally)</string>
 </resources>

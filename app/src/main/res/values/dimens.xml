@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Text sizes-->
+    <dimen name="textSizeBig">26sp</dimen>
+    <dimen name="textSizeNormal">16sp</dimen>
+    <dimen name="textSizeExtraBig">30sp</dimen>
+    <dimen name="textSizeSmall">12sp</dimen>
+
+    <!--Margin sizes-->
+    <dimen name="marginStartNormal">8dp</dimen>
+    <dimen name="marginEndNormal">8dp</dimen>
+    <dimen name="marginTopNormal">8dp</dimen>
+    <dimen name="marginBottomNormal">8dp</dimen>
+
+    <!--Stroke-->
+    <dimen name="strokeWidth">2dp</dimen>
+</resources>

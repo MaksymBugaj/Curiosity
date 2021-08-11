@@ -15,8 +15,9 @@ import javax.inject.Singleton
         ActivityBuildersModule::class,
         AppModule::class,
         ViewModelModule::class,
-        FragmentBuildersModule::class
-
+        FragmentBuildersModule::class,
+        DaoModule::class,
+        ServiceModule::class
     ]
 )
 interface AppComponent : AndroidInjector<CuriosityApp> {
