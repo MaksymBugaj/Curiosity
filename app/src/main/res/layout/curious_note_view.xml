@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/notePreview_view"
+        style="@style/BottomSheetBlackLittleLine"
+        android:layout_width="50dp"
+        android:layout_height="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/notePreview_title"
+        style="@style/TextViewsBig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notePreview_view"
+        tools:text="Test Title" />
+
+    <TextView
+        android:id="@+id/notePreview_note"
+        style="@style/TextViewsNormal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notePreview_title"
+        tools:text="Test Note" />
+
+    <TextView
+        android:id="@+id/notePreview_url"
+        style="@style/TextViewsSmallItalic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notePreview_note"
+        android:autoLink="web"
+
+        tools:text="Test url" />
+<Space
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/notePreview_url"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

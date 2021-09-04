@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">Curiosity</string>
+    <string name="close">close</string>
+
+    <!--New Note screen-->
+    <string name="new_note_view_note_title_hint">Insert Title (optionally)</string>
+    <string name="new_note_view_note_text_hint">Insert note</string>
+    <string name="new_note_view_note_url_hint">Insert url (optionally)</string>
+    <string name="check_later">Check this later</string>
+    <string name="empty_note">Note has to be inserted!</string>
+
+    <!--Search-->
     <string name="search">Type interesting thing</string>
+
+    <!--Navigation-->
+    <string name="add">Add new note</string>
+    <string name="currentNotes">Current notes</string>
+    <string name="statistics">Stats</string>
+    <string name="notes_to_check">To check</string>
+
 </resources>

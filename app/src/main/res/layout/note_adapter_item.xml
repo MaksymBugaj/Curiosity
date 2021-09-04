@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/noteAdapterItem_container"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/noteAdapterItem_noteTitle"
+            style="@style/TextViewsBig"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            app:layout_constraintEnd_toStartOf="@+id/noteAdapterItem_noteDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="title" />
+
+        <TextView
+            android:id="@+id/noteAdapterItem_noteDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            style="@style/TextViewsSmallBold"
+            app:layout_constraintBottom_toBottomOf="@id/noteAdapterItem_noteTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/noteAdapterItem_noteTitle"
+            app:layout_constraintTop_toTopOf="@id/noteAdapterItem_noteTitle"
+            tools:text="16.07.2121" />
+
+        <TextView
+            android:id="@+id/noteAdapterItem_note"
+            style="@style/TextViewsNormal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noteAdapterItem_noteTitle"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="schakalaka" />
+
+        <TextView
+            android:id="@+id/noteAdapterItem_url"
+            style="@style/TextViewsSmallBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noteAdapterItem_note"
+            tools:text="Url" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

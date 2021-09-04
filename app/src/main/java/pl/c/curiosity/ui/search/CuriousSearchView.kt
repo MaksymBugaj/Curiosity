@@ -1,16 +1,18 @@
-package pl.c.curiosity.ui.curious
+package pl.c.curiosity.ui.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import dagger.android.support.DaggerFragment
 import pl.c.curiosity.R
 import pl.c.curiosity.di.ViewModelProviderFactory
+import pl.c.curiosity.ui.utils.BaseReactiveFragment
 import javax.inject.Inject
-
-class CuriousSearchView : DaggerFragment() {
+/**
+ * Here will be the need to use this funny things from AS during search
+ */
+class CuriousSearchView : BaseReactiveFragment() {
 
     companion object {
         fun newInstance() = CuriousSearchView()
@@ -28,8 +30,8 @@ class CuriousSearchView : DaggerFragment() {
         return inflater.inflate(R.layout.curious_searches_view, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+    }
 }
