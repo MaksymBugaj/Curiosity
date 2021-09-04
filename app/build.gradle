@@ -35,6 +35,27 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    flavorDimensions "curious"
+    productFlavors {
+        dev {
+            dimension "curious"
+            applicationIdSuffix ".dev"
+            versionNameSuffix = "-dev"
+            resValue "string", "app_name", "Curiosity-dev"
+        }
+        demo {
+            dimension "curious"
+            applicationIdSuffix ".demo"
+            versionNameSuffix = "-demo"
+            resValue "string", "app_name", "Curiosity-demo"
+        }
+        playStore {
+            dimension "curious"
+            applicationIdSuffix ".playStore"
+            versionNameSuffix = "-playStore"
+        }
+    }
 }
 
 dependencies {
