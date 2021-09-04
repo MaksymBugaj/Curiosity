@@ -1,4 +1,4 @@
-package pl.c.curiosity.ui.curious.list
+package pl.c.curiosity.ui.curious.list.toCheck
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -9,9 +9,9 @@ import pl.c.curiosity.ui.utils.BaseReactiveViewModel
 import timber.log.Timber
 import javax.inject.Inject
 
-class CuriousNotesViewModel @Inject constructor(
+class CuriosNoteToCheckViewModel @Inject constructor(
     private val curiousRepository: CuriousRepository
-) : BaseReactiveViewModel() {
+): BaseReactiveViewModel() {
 
     val notes = BehaviorSubject.create<List<CuriousNote>>()
 
@@ -21,7 +21,7 @@ class CuriousNotesViewModel @Inject constructor(
 
     fun loadAll(){
         compositeDisposable.add(
-            curiousRepository.loadAllCuriousNotes()
+            curiousRepository.loadAllToCheckCuriousNotes()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

@@ -1,4 +1,4 @@
-package pl.c.curiosity.ui.curious.list
+package pl.c.curiosity.ui.curious.list.checked
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,15 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import kotlinx.android.synthetic.main.curious_notes_view.*
 import pl.c.curiosity.R
+import pl.c.curiosity.data.db.entity.CuriousNote
 import pl.c.curiosity.di.ViewModelProviderFactory
-import pl.c.curiosity.ui.utils.BasicReactiveFragment
+import pl.c.curiosity.ui.curious.item.RoundNotePreviewFragment
+import pl.c.curiosity.ui.curious.list.NotesAdapter
+import pl.c.curiosity.ui.utils.BaseReactiveFragment
 import javax.inject.Inject
 
-class CuriousNotesView : BasicReactiveFragment() {
-
-    companion object {
-        fun newInstance() = CuriousNotesView()
-    }
+class CuriousNotesView : BaseReactiveFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProviderFactory
@@ -24,7 +23,7 @@ class CuriousNotesView : BasicReactiveFragment() {
         viewModelFactory
     }
 
-    private val adapter = NotesAdapter()
+    private val adapter = NotesAdapter(::openRoundDialogFragment)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,8 +44,17 @@ class CuriousNotesView : BasicReactiveFragment() {
         rvCuriousNotes.adapter = adapter
     }
 
+    private fun openRoundDialogFragment(item: CuriousNote){
+        val checkedNote = RoundNotePreviewFragment.newInstance(item)
+        checkedNote.show(childFragmentManager, "RoundPreviewFragment")
+    }
+
     override fun onResume() {
         super.onResume()
         viewModel.loadAll()
+    }
+
+    companion object {
+        fun newInstance() = CuriousNotesView()
     }
 }

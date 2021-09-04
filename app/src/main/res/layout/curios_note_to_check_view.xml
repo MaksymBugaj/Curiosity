@@ -4,16 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.curious.list.checked.CuriousNotesView"
-    android:background="@color/WhiteSmoke">
+    tools:context=".ui.curious.list.toCheck.CuriousNoteToCheckView">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCuriousNotes"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    <include layout="@layout/recycler_view_normal"
+        android:id="@+id/cntcv_rv"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

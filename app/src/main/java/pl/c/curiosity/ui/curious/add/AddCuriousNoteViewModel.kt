@@ -9,6 +9,7 @@ import org.joda.time.DateTimeZone
 import pl.c.curiosity.data.db.entity.CuriousNote
 import pl.c.curiosity.data.repository.CuriousRepository
 import pl.c.curiosity.ui.utils.BaseReactiveViewModel
+import pl.c.curiosity.utils.TAG
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -20,16 +21,25 @@ class AddCuriousNoteViewModel @Inject constructor(
     val observableNote = ObservableField<String>()
     val observableNoteTitle = ObservableField<String>()
     val observableNoteUrl = ObservableField<String>()
-    val close = PublishSubject.create<Unit>()
+    val observableChecker = ObservableField<Boolean>()
 
-    fun save(noteTitle: String?, noteUrl: String?, note: String){
+    val close = PublishSubject.create<Unit>()
+    val emptyNote = PublishSubject.create<Unit>()
+
+    fun save(checked: Boolean){
+        if(observableNote.get().isNullOrBlank()){
+            emptyNote.onNext(Unit)
+            return
+        }
+        Timber.tag(TAG.mainTag).d("ObservableCheckerValue: ${observableChecker.get()}")
         val curiousNote = CuriousNote(
             0,
-            noteTitle,
-            note,
+            observableNoteTitle.get()?:"",
+            observableNote.get()!!,
             DateTime.now().withZone(DateTimeZone.getDefault()),
             DateTime.now().withZone(DateTimeZone.getDefault()),
-            noteUrl
+            observableNoteUrl.get()?:"",
+            checked
         )
 
         compositeDisposable.add(

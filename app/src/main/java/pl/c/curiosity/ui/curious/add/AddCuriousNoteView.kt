@@ -10,10 +10,11 @@ import kotlinx.android.synthetic.main.add_curious_note_view.*
 import pl.c.curiosity.R
 import pl.c.curiosity.databinding.AddCuriousNoteViewBinding
 import pl.c.curiosity.di.ViewModelProviderFactory
-import pl.c.curiosity.ui.utils.BasicReactiveFragment
+import pl.c.curiosity.ui.showMaterialDialog
+import pl.c.curiosity.ui.utils.BaseReactiveFragment
 import javax.inject.Inject
 
-class AddCuriousNoteView : BasicReactiveFragment() {
+class AddCuriousNoteView : BaseReactiveFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProviderFactory
@@ -28,7 +29,7 @@ class AddCuriousNoteView : BasicReactiveFragment() {
         savedInstanceState: Bundle?
     ): View =
         AddCuriousNoteViewBinding.inflate(inflater, container, false).apply {
-            //viewModel = newCuriousNoteViewModel
+            viewModel = addCuriousNoteViewModel
             lifecycleOwner = viewLifecycleOwner
         }.root
 
@@ -36,12 +37,15 @@ class AddCuriousNoteView : BasicReactiveFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnAddNote.setOnClickListener {
-            addCuriousNoteViewModel.save(newNoteView_inputNoteTitle.text.toString(), newNoteView_inputNoteUrl.text.toString(), newNoteView_inputNoteText.text.toString())
+            addCuriousNoteViewModel.save(newNoteView_checkBoxToCheck.isChecked)
         }
 
         disposable.addAll(
             addCuriousNoteViewModel.close.subscribe {
                 findNavController().navigate(R.id.action_addCuriousNoteView_to_curiousNotesView)
+            },
+            addCuriousNoteViewModel.emptyNote.subscribe {
+                context?.let { ctx -> showMaterialDialog(ctx, R.string.empty_note) }
             }
         )
 

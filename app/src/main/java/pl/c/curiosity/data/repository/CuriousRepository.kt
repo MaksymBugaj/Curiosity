@@ -10,5 +10,7 @@ class CuriousRepository @Inject constructor(
 
     fun insertCuriousNote(model: CuriousNote) = curiousNoteDao.insertReplace(model)
 
-    fun loadAllCuriousNotes() = curiousNoteDao.selectAll()
+    fun loadAllFinishedCuriousNotes() = curiousNoteDao.selectAllFinished()
+
+    fun loadAllToCheckCuriousNotes() = curiousNoteDao.selectAllToCheck()
 }

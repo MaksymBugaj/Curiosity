@@ -9,7 +9,9 @@ import pl.c.curiosity.data.db.entity.CuriousNote
 import pl.c.curiosity.ui.utils.rv.OverloadAdapter
 import pl.c.curiosity.ui.utils.rv.OverloadViewHolder
 
-class NotesAdapter: OverloadAdapter<CuriousNote>() {
+class NotesAdapter(
+    val onClicked: ((item: CuriousNote) -> Unit)? = null
+): OverloadAdapter<CuriousNote>() {
 
 
     override fun onCreateViewHolder(
@@ -25,9 +27,13 @@ class NotesAdapter: OverloadAdapter<CuriousNote>() {
 
         override fun bind(item: CuriousNote) {
             itemView.noteAdapterItem_noteTitle.text = item.title ?: "-"
-            itemView.noteAdapterItem_noteDate.text = item.createdDate.toString("HH:mm")
+            itemView.noteAdapterItem_noteDate.text = item.createdDate.toString("dd-MM HH:mm")
             itemView.noteAdapterItem_note.text = item.note
             itemView.noteAdapterItem_url.text = item.url
+
+            itemView.noteAdapterItem_container.setOnClickListener {
+                onClicked?.invoke(item)
+            }
         }
     }
 

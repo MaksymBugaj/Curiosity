@@ -21,11 +21,17 @@
 
     <fragment
         android:id="@+id/curiousNotesView"
-        android:name="pl.c.curiosity.ui.curious.list.CuriousNotesView"
+        android:name="pl.c.curiosity.ui.curious.list.checked.CuriousNotesView"
         android:label="curious_notes_view"
         tools:layout="@layout/curious_notes_view" >
 
     </fragment>
+
+    <fragment
+        android:id="@+id/curiousNoteToCheckView"
+        android:name="pl.c.curiosity.ui.curious.list.toCheck.CuriousNoteToCheckView"
+        android:label="curios_note_to_check_view"
+        tools:layout="@layout/curios_note_to_check_view" />
 
 
 </navigation>

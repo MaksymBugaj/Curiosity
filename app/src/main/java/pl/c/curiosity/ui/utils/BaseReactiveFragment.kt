@@ -5,7 +5,7 @@ import android.view.View
 import dagger.android.support.DaggerFragment
 import io.reactivex.disposables.CompositeDisposable
 
-open class BasicReactiveFragment : DaggerFragment(){
+open class BaseReactiveFragment : DaggerFragment(){
 
     protected lateinit var disposable: CompositeDisposable
 

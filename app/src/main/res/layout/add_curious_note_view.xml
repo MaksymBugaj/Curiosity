@@ -28,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
+                android:text="@={viewModel.observableNoteTitle}"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -46,7 +47,8 @@
                 android:id="@+id/newNoteView_inputNoteText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textMultiLine"/>
+                android:inputType="textMultiLine"
+                android:text="@={viewModel.observableNote}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,9 +66,22 @@
                 android:id="@+id/newNoteView_inputNoteUrl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:text="@={viewModel.observableNoteUrl}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/newNoteView_checkBoxToCheck"
+            style="@style/CheckBoxStyle"
+            android:text="@string/check_later"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="@={viewModel.observableChecker}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newNoteView_layoutNoteUrl"
+            />
 
         <Button
             android:id="@+id/btnAddNote"
@@ -76,7 +91,7 @@
             android:text="@string/add"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/newNoteView_layoutNoteUrl" />
+            app:layout_constraintTop_toBottomOf="@id/newNoteView_checkBoxToCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import pl.c.curiosity.R
 import pl.c.curiosity.di.ViewModelProviderFactory
-import pl.c.curiosity.ui.utils.BasicReactiveFragment
+import pl.c.curiosity.ui.utils.BaseReactiveFragment
 import javax.inject.Inject
-
-class CuriousSearchView : BasicReactiveFragment() {
+/**
+ * Here will be the need to use this funny things from AS during search
+ */
+class CuriousSearchView : BaseReactiveFragment() {
 
     companion object {
         fun newInstance() = CuriousSearchView()
