@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.curious.list.toCheck.CuriousNoteToCheckView">
+    tools:context=".ui.curious.list.toCheck.CuriousNoteToCheckView"
+    android:background="@color/WhiteSmoke">
 
     <include layout="@layout/recycler_view_normal"
         android:id="@+id/cntcv_rv"

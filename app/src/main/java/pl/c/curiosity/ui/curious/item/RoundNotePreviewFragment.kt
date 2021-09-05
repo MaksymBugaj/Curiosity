@@ -14,6 +14,8 @@ class RoundNotePreviewFragment : RoundBottomSheet() {
 
     private var item: CuriousNote? = null
 
+    var onClick :((item:CuriousNote) -> Unit)? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -26,12 +28,14 @@ class RoundNotePreviewFragment : RoundBottomSheet() {
         super.onViewCreated(view, savedInstanceState)
 
         item = requireArguments().getParcelable(ITEM)
-        item?.let {
-            notePreview_title.text = it.title
-            notePreview_note.text = it.note
-            notePreview_url.text = it.url
+        item?.let { item ->
+            notePreview_title.text = item.title
+            notePreview_note.text = item.note
+            notePreview_url.text = item.url
+            notePreview_editButton.setOnClickListener {
+                onClick?.invoke(item)
+            }
         }
-
 
     }
 

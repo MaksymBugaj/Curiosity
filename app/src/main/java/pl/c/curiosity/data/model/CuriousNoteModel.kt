@@ -15,8 +15,8 @@ data class CuriousNoteModel(
     constructor(model: CuriousNote) : this(
         id = model.id,
         note = model.note,
-        createdDate = model.createdDate,
-        editedDate = model.editedDate,
+        createdDate = model.createdAt,
+        editedDate = model.modifiedAt,
         url = model.url,
         isUploaded = model.isUploaded
     )

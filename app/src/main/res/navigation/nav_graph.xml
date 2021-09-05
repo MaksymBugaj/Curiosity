@@ -17,6 +17,11 @@
             android:id="@+id/action_addCuriousNoteView_to_curiousNotesView"
             app:destination="@id/curiousNotesView"
             app:exitAnim="@android:anim/fade_out" />
+
+        <argument
+            android:name="curiousNote"
+            app:argType="pl.c.curiosity.data.db.entity.CuriousNote"
+            />
     </fragment>
 
     <fragment
@@ -25,13 +30,24 @@
         android:label="curious_notes_view"
         tools:layout="@layout/curious_notes_view" >
 
+        <action
+            android:id="@+id/action_curiousNotesView_to_addCuriousNoteView"
+            app:destination="@id/addCuriousNoteView"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
         android:id="@+id/curiousNoteToCheckView"
         android:name="pl.c.curiosity.ui.curious.list.toCheck.CuriousNoteToCheckView"
         android:label="curios_note_to_check_view"
-        tools:layout="@layout/curios_note_to_check_view" />
+        tools:layout="@layout/curios_note_to_check_view" >
+        <action
+            android:id="@+id/action_curiousNoteToCheckView_to_addCuriousNoteView"
+            app:destination="@id/addCuriousNoteView" />
+    </fragment>
 
 
 </navigation>

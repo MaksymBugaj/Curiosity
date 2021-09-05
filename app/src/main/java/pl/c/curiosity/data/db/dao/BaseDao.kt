@@ -3,6 +3,7 @@ package pl.c.curiosity.data.db.dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
+import androidx.room.Update
 import io.reactivex.Completable
 
 abstract class BaseDao<T> {
@@ -33,6 +34,15 @@ abstract class BaseDao<T> {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     abstract fun insertIgnore(obj: List<T>): Completable
+
+    @Update()
+    abstract fun update(obj: T): Completable
+
+    @Insert()
+    abstract fun update(vararg obj: T): Completable
+
+    @Insert()
+    abstract fun update(obj: List<T>): Completable
 
     @Delete
     abstract fun delete(obj: T): Completable

@@ -13,8 +13,8 @@ data class CuriousNote(
     val id:Int,
     val title: String?,
     val note: String,
-    val createdDate: DateTime,
-    val editedDate: DateTime?,
+    val createdAt: DateTime,
+    val modifiedAt: DateTime?,
     val url: String?,
     val toCheck:Boolean,
     val isUploaded: Boolean = false
