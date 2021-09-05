@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.note_adapter_item.view.*
+import org.joda.time.DateTimeZone
 import pl.c.curiosity.R
 import pl.c.curiosity.data.db.entity.CuriousNote
 import pl.c.curiosity.ui.utils.rv.OverloadAdapter
@@ -27,7 +28,7 @@ class NotesAdapter(
 
         override fun bind(item: CuriousNote) {
             itemView.noteAdapterItem_noteTitle.text = item.title ?: "-"
-            itemView.noteAdapterItem_noteDate.text = item.createdDate.toString("dd-MM HH:mm")
+            itemView.noteAdapterItem_noteDate.text = item.createdAt.withZone(DateTimeZone.getDefault()).toString("dd-MM HH:mm")
             itemView.noteAdapterItem_note.text = item.note
             itemView.noteAdapterItem_url.text = item.url
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.curios_note_to_check_view.*
 import pl.c.curiosity.R
@@ -47,6 +48,10 @@ class CuriousNoteToCheckView : BaseReactiveFragment() {
 
     private fun openRoundDialogFragment(item: CuriousNote){
         val checkedNote = RoundNotePreviewFragment.newInstance(item)
+        checkedNote.onClick = { curiousNote ->
+            val directions = CuriousNoteToCheckViewDirections.actionCuriousNoteToCheckViewToAddCuriousNoteView(curiousNote)
+            findNavController().navigate(directions)
+        }
         checkedNote.show(childFragmentManager, "RoundPreviewFragment")
     }
 

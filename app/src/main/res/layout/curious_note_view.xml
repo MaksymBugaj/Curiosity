@@ -46,10 +46,22 @@
 
         tools:text="Test url" />
 <Space
+    android:id="@+id/space"
     android:layout_width="match_parent"
     android:layout_height="25dp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/notePreview_url"/>
+
+    <Button
+        android:id="@+id/notePreview_editButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/MaterialButton"
+        android:text="@string/edit_note"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

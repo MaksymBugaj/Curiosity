@@ -7,6 +7,12 @@
     android:orientation="vertical"
     tools:context=".ui.NavHolder">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/WhiteSmoke"
+        />
+
     <fragment
         android:id="@+id/nav_holder"
         android:layout_width="match_parent"
