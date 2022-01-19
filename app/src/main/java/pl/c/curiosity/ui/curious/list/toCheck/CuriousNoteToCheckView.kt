@@ -48,10 +48,13 @@ class CuriousNoteToCheckView : BaseReactiveFragment() {
 
     private fun openRoundDialogFragment(item: CuriousNote){
         val checkedNote = RoundNotePreviewFragment.newInstance(item)
-        checkedNote.onClick = { curiousNote ->
+        checkedNote.onEditClick = { curiousNote ->
             val directions = CuriousNoteToCheckViewDirections.actionCuriousNoteToCheckViewToAddCuriousNoteView(curiousNote)
             findNavController().navigate(directions)
         }
+        checkedNote.onDeleteClick = { curiousNote ->
+            checkedNote.dismiss()
+            viewModel.deleteNote(curiousNote) }
         checkedNote.show(childFragmentManager, "RoundPreviewFragment")
     }
 

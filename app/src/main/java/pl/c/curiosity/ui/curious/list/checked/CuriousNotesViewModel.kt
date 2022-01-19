@@ -19,6 +19,15 @@ class CuriousNotesViewModel @Inject constructor(
         loadAll()
     }
 
+    fun deleteNote(curiousNote: CuriousNote){
+        compositeDisposable.add(
+            curiousRepository.deleteCuriousNote(curiousNote)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ loadAll() }, { Timber.e(it) })
+        )
+    }
+
     fun loadAll(){
         compositeDisposable.add(
             curiousRepository.loadAllFinishedCuriousNotes()

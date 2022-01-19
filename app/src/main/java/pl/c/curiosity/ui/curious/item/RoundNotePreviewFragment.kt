@@ -14,7 +14,8 @@ class RoundNotePreviewFragment : RoundBottomSheet() {
 
     private var item: CuriousNote? = null
 
-    var onClick :((item:CuriousNote) -> Unit)? = null
+    var onEditClick : ((item:CuriousNote) -> Unit)? = null
+    var onDeleteClick : ((item:CuriousNote) -> Unit)? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +34,10 @@ class RoundNotePreviewFragment : RoundBottomSheet() {
             notePreview_note.text = item.note
             notePreview_url.text = item.url
             notePreview_editButton.setOnClickListener {
-                onClick?.invoke(item)
+                onEditClick?.invoke(item)
+            }
+            notePreview_deleteButton.setOnClickListener {
+                onDeleteClick?.invoke(item)
             }
         }
 

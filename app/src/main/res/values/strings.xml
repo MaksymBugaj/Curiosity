@@ -14,6 +14,7 @@
 
     <!--Show Note-->
     <string name="edit_note">Edit note</string>
+    <string name="delete_note">Delete note</string>
 
     <!--Navigation-->
     <string name="add">Add new note</string>
